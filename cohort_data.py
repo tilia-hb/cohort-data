@@ -127,9 +127,9 @@ def hogwarts_by_house(filename):
     		instructors.append(last_name)
     	elif house == "G":
     		ghosts.append(last_name)
-    
-    # Code goes here
 
+    # Code goes here
+    all_hogwarts = [dumbledores_army, gryffindor, hufflepuff, ravenclaw, slytherin,instructors,ghosts]
     return all_hogwarts
 
 
