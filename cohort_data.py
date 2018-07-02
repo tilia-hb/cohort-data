@@ -123,13 +123,17 @@ def hogwarts_by_house(filename):
     		gryffindor.append(last_name)
     	elif house == "Dumbledore's Army":
     		dumbledores_army.append(last_name)
-    	elif house == "I":
-    		instructors.append(last_name)
-    	elif house == "G":
-    		ghosts.append(last_name)
+    	elif house == "":
+    		if person[-1] == "I":
+	    		instructors.append(last_name)
+    		elif person[-1] == "G":	
+    			ghosts.append(last_name)
 
     # Code goes here
-    all_hogwarts = [dumbledores_army, gryffindor, hufflepuff, ravenclaw, slytherin,instructors,ghosts]
+    all_hogwarts = [dumbledores_army, gryffindor, hufflepuff, ravenclaw, slytherin,ghosts,instructors]
+    for index,lis in enumerate(all_hogwarts):
+    	all_hogwarts[index] = sorted(lis)
+
     return all_hogwarts
 
 
@@ -149,6 +153,12 @@ def all_students_tuple_list(filename):
     student_list = []
 
     # Code goes here
+
+    for line in file:
+    	line = line.rstrip()
+    	person = line.split("|")
+    	name = " ".join(person[0:2])
+
 
     return student_list
 
