@@ -218,11 +218,21 @@ def find_name_duplicates(filename):
     set(['Weasley'])
 
     """
-
+    file = open(filename)
+    all_names = set()
     duplicate_names = set()
+    
+    for line in file:
+    	line = line.rstrip()
+    	person = line.split("|")
+    	last_name = person[1]
+    	#all_names.add(last_name)
+    	#duplicate_names.add(last_name)
+
+
 
     # Code goes here
-
+    file.close()
     return duplicate_names
 
 
@@ -261,7 +271,7 @@ def find_house_members_by_student_name(student_list):
 # Here is some useful code to run these functions without doctests!
 
 all_students_data = all_students_tuple_list("cohort_data.txt")
-print(find_cohort_by_student_name(all_students_data))
+#print(find_cohort_by_student_name(all_students_data))
 # find_house_members_by_student_name(all_students_data)
 
 
